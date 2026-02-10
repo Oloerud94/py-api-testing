@@ -32,6 +32,7 @@ def test_create_user_should_return_201_when_valid_data_provided(user_data,user_a
     create_user_data = user_data_preparation.create_user_data(user_data['name'], user_data['job'])
     payload = user_data_preparation.create_user_data_payload(create_user_data)
 
+
     # When
     response = user_api.create_user(payload)
     response_json = response.json()
