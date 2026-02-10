@@ -23,7 +23,8 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest -v
+          export PYTHONPATH=$PYTHONPATH:$(pwd)/src
+          pytest -v --html=report.html --self-contained-html
 
       - name: Upload pytest report
         uses: actions/upload-artifact@v4
