@@ -23,6 +23,9 @@ jobs:
           pip install pytest-html
 
       - name: Run tests
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
+          API_KEY: ${{ secrets.API_KEY }}
         run: |
           export PYTHONPATH=$PYTHONPATH:$(pwd)/src
           pytest -v --html=report.html --self-contained-html
