@@ -3,7 +3,7 @@ from src.config import config
 
 class BaseApiClient:
     def __init__(self, base_url = None, api_key = None):
-        self.base_url = base_url or config.BASE_URL
+        self.base_url = config.BASE_URL
         self.api_key = api_key or config.API_KEY
         self.session = requests.Session()
         self._set_headers()
